@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>ATV BD2</title>
+</head>
+<body>
+    <h1>Render SVG</h1>
+    <h2>Versão Brasil</h2>
+    <div class="select_container">
+        <select id="states" class="style_select">
+            <option value="" disabled selected>Escolha um estado</option>
+        </select>
+        <select id="cities" class="style_select">
+            <option value="" disabled selected>Escolha um município</option>
+        </select>
+    </div>
+    <div class="svg_container">
+        <svg id="svg" xmlns="http://www.w3.org/2000/svg">
+            <path id="path_estado"/> 
+            <path id="path_municipio"/>
+        </svg>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
