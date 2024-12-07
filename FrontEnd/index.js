@@ -1,7 +1,9 @@
+// Ao carregar a página, chama a função que busca os estados na API do IBGE
 document.addEventListener('DOMContentLoaded', () => {
     load_states();
 });
 
+//Função que consome a API do IBGE para buscar os estados
 async function load_states() {
     try {
         const states = await fetch('http://servicodados.ibge.gov.br/api/v1/localidades/estados').then(data => data.json());
@@ -29,6 +31,7 @@ async function load_states() {
     }
 }
 
+//Função que consome a API do IBGE para buscar os municípios baseado no estado escolhido
 async function load_cities(select_state) {
     try {
         let cities = await fetch(`http://servicodados.ibge.gov.br/api/v1/localidades/estados/${select_state}/municipios`).then(data => data.json());
@@ -53,6 +56,7 @@ async function load_cities(select_state) {
     }
 }
 
+//Função que envia uma requisição ao Banco de Dados para receber o SVG do estadoe do município
 async function load_SVG(stateId, cityName) {
     try {
         let response = await fetch(`http://localhost:3000/svg/${stateId}/${cityName}`).then(data => data.json());
@@ -72,6 +76,7 @@ async function load_SVG(stateId, cityName) {
     }
 }
 
+//Função que cria um opção padrão de um select 
 function createDefaultOption(text) {
     const defaultOption = `<option value="" disabled selected>${text}</option>`;
     return defaultOption;
