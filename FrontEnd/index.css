@@ -34,6 +34,27 @@ h1, h2 {
 svg {
     width: 500px;
     height: 500px;
+    fill: lightgray;
+}
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape a {
+    font-size: 12px;
+    text-decoration: none;
+    color: lightgray;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.svg_github {
+    width: 20px;
+    height: 20px;
 }
 
 .style_select {
